@@ -38,6 +38,7 @@
 Прехід 250ms cubic-bezier(0.4, 0, 0.2, 1);
 Колір бордеру іконки закрити модалки rgba(0, 0, 0, 0.1);
 Колір іконки закрити модалки #000000;
+Колір плейсхолдеру rgba(117, 117, 117, 0.5);
 Основний шрифт тексту Roboto, sans-serif;
 Шрифт логотипу Raleway, sans-serif; */
 
@@ -82,6 +83,7 @@
     --color-modal-icon: #212121;
     --border-color-modal-close-icon: rgba(0, 0, 0, 0.1);
     --color-modal-close-icon: #000000;
+    --placeholder-color: rgba(117, 117, 117, 0.5);
     --pimary-font-text: Roboto, sans-serif;
     --font-logo: Raleway, sans-serif;
 }
@@ -233,7 +235,8 @@ header {border-bottom: 1px solid var(--header-border-color);}
 .service-btn,
 .work-text, 
 .footer-text,
-.footer-btn {
+.footer-btn,
+.modal-btn-submit {
     font-weight: 700;
 }
 
@@ -289,6 +292,7 @@ header {border-bottom: 1px solid var(--header-border-color);}
 .service,
 .service-btn,
 .footer-btn,
+.modal-btn-submit,
 .address-list .item .link {
     color: var(--primary-light-text-color);
 }
@@ -297,6 +301,7 @@ header {border-bottom: 1px solid var(--header-border-color);}
 .service-title,
 .service-btn,
 .footer-btn,
+.modal-btn-submit,
 .portfolio-title  {
     letter-spacing: 0.06em;
 }
@@ -321,7 +326,8 @@ header {border-bottom: 1px solid var(--header-border-color);}
 }
 
 .service-btn,
-.footer-btn {
+.footer-btn,
+.modal-btn-submit {
     background-color: var(--accent-color);
     box-shadow: 0px 4px 4px var(--service-btn-shadow);
     border: none; 
@@ -331,12 +337,15 @@ header {border-bottom: 1px solid var(--header-border-color);}
 
 .service-btn,
 .footer-btn,
-.portfolio-post {
+.portfolio-post,
+.modal-btn-submit {
     line-height: 1.88;
 }
 
 .service-btn:hover,
-.service-btn:focus {
+.service-btn:focus,
+.modal-btn-submit:hover,
+.modal-btn-submit:focus  {
     background-color: var(--accent-btn);
 }
 
@@ -618,6 +627,10 @@ header {border-bottom: 1px solid var(--header-border-color);}
     margin-top: 20px;
 }
 
+.footer-form-label {
+    display: inline-block;
+}
+
 .footer-form-input {
     display: inline-flex;
     width: 358px;
@@ -630,8 +643,8 @@ header {border-bottom: 1px solid var(--header-border-color);}
     border: 1px solid var(--border-color-footer-subscription);
     filter: drop-shadow(0px 4px 4px var(--service-btn-shadow));
     border-radius: 4px;
-    color: var(--secondary-light-text-color);
     background-color: var(--dark-bg-color);
+    color: var(--primary-light-text-color);
     transition: border-color var(--transition-dur-tf);
 }
 
@@ -639,6 +652,10 @@ header {border-bottom: 1px solid var(--header-border-color);}
     outline: none;
     border-color: var(--accent-color);
     cursor: pointer;
+}
+
+.footer-form-input::placeholder {
+    color: var(--secondary-light-text-color);
 }
 
 .footer-btn {
@@ -820,7 +837,8 @@ header {border-bottom: 1px solid var(--header-border-color);}
     transition: fill var(--transition-dur-tf);
 }
 
-.modal-close-icon:hover {
+.modal-close-icon:hover,
+.modal-close-icon:focus {
     fill: var(--accent-color);
 }
 
@@ -843,11 +861,15 @@ header {border-bottom: 1px solid var(--header-border-color);}
     margin-bottom: 10px;
 }
 
+.modal-form-label-desc,
+.modal-form-check-label {
+    font-style: normal;
+    font-weight: 400;
+}
+
 .modal-form-label-desc {
     display: block;
     margin-bottom: 4px;
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
@@ -869,6 +891,7 @@ header {border-bottom: 1px solid var(--header-border-color);}
     height: 120px;
     padding: 12px 16px;
     resize: none;
+    overflow: auto;
 }
 
 .modal-form-input,
@@ -884,6 +907,10 @@ header {border-bottom: 1px solid var(--header-border-color);}
 .modal-form-message:focus {
     outline: none;
     border-color: var(--accent-color);
+}
+
+.modal-form-message::placeholder {
+    color: var(--placeholder-color);
 }
 
 .modal-form-icon {
@@ -902,4 +929,73 @@ header {border-bottom: 1px solid var(--header-border-color);}
     fill: var(--accent-color);
 }
 
+.modal-form-check-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.71;  
+    color: var(--secondary-text-color);
+    overflow: hidden;
+}
 
+/* .modal-form-check-icon-vector {
+    display: flex;
+    position: relative;
+    width: 16px;
+    height: 15px;
+    text-align: center;
+    justify-content: center;
+
+    border: 2px solid var(--pimary-text-color);
+    border-radius: 3px;
+    margin-right: 7px;
+    fill: transparent; 
+}
+
+.modal-form-check-icon {
+    position: absolute;
+    width: 16px;
+    height: 15px;
+}
+
+.modal-form-check:checked + .modal-form-check-icon-vector {
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
+    background-size: contain;
+    background-origin: content-box;
+} */
+
+.modal-form-check-icon {
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--pimary-text-color);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.modal-form-check-icon-vector {
+    display: none;
+}
+
+.modal-form-check:checked + .modal-form-check-icon {
+    background-color: var(--accent-color);
+}
+
+..modal-form-check:checked + .modal-form-check-icon .modal-form-check-icon-vector {
+    display: block;
+}
+
+
+
+.modal-form-check-link {
+    color: var(--accent-color);
+}
+
+.modal-btn-submit {
+    display: flex;
+    margin-top: 30px;
+    padding: 10px 52px;
+    align-self: center;
+
+    transition: background-color var(--transition-dur-tf);
+}

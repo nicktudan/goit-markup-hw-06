@@ -479,7 +479,9 @@
             <div class="footer-subscription-card-thumb">
                 <p class="footer-text">Підпишіться на розсилку</p>
                 <form class="footer-form">
-                    <input class="footer-form-input" type="email" name="email" placeholder="E-mail" required>
+                    <label class="footer-form-label">
+                        <input class="footer-form-input" type="email" name="email" placeholder="E-mail" required>
+                    </label>
                     <button type="submit" class="footer-btn">Підписатися
                         <svg class="send-icon" lang="en" aria-label="send icon" width="16px" height="12px">
                             <use href="./images/icons.svg#icon-send"></use>
@@ -538,8 +540,12 @@
                 </label>
 
                 <label class="modal-form-check-label">
-                    <input class="modal-form-check" type="checkbox" name="user_policy" required>
-                    Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a> 
+                    <input class="modal-form-check visually-hidden" type="checkbox" name="user_policy" required>
+                    <!-- <span class="modal-form-check-icon-vector"></span> -->
+                    <svg class="modal-form-check-icon">
+                        <use class="modal-form-check-icon-vector" href="./images/icons.svg#icon-check"></use>
+                    </svg>
+                    Погоджуюся з розсилкою та приймаю <a href="#" class="modal-form-check-link" >Умови договору</a> 
                 </label>
                 
                 <button class="modal-btn-submit" type="submit">Відправити</button>
