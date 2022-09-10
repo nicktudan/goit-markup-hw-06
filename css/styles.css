@@ -830,15 +830,12 @@ header {border-bottom: 1px solid var(--header-border-color);}
     background-color: transparent;
     padding: 0;
     cursor: pointer;
-}
-
-.modal-close-icon {
     fill: var(--color-modal-close-icon);
     transition: fill var(--transition-dur-tf);
 }
 
-.modal-close-icon:hover,
-.modal-close-icon:focus {
+.modal-btn-close:hover,
+.modal-btn-close:focus {
     fill: var(--accent-color);
 }
 
@@ -932,45 +929,22 @@ header {border-bottom: 1px solid var(--header-border-color);}
 .modal-form-check-label {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 14px;
     line-height: 1.71;  
     color: var(--secondary-text-color);
     overflow: hidden;
-}
-
-/* .modal-form-check-icon-vector {
-    display: flex;
-    position: relative;
-    width: 16px;
-    height: 15px;
-    text-align: center;
-    justify-content: center;
-
-    border: 2px solid var(--pimary-text-color);
-    border-radius: 3px;
-    margin-right: 7px;
-    fill: transparent; 
-}
-
-.modal-form-check-icon {
-    position: absolute;
-    width: 16px;
-    height: 15px;
-}
-
-.modal-form-check:checked + .modal-form-check-icon-vector {
-    fill: var(--accent-color);
-    border-color: var(--accent-color);
-    background-size: contain;
-    background-origin: content-box;
-} */
-
-.modal-form-check-icon {
-    width: 16px;
-    height: 15px;
-    border: 2px solid var(--pimary-text-color);
-    border-radius: 3px;
     cursor: pointer;
+}
+
+.modal-form-check-icon {
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--pimary-text-color);
+    border-radius: 3px;
+    fill: #FFFFFF;
+    margin-right: 7px;
+    transition: background-color var(--transition-dur-tf), border-color var(--transition-dur-tf);
 }
 
 .modal-form-check-icon-vector {
@@ -978,21 +952,21 @@ header {border-bottom: 1px solid var(--header-border-color);}
 }
 
 .modal-form-check:checked + .modal-form-check-icon {
+    border-color: var(--accent-color);
     background-color: var(--accent-color);
 }
 
-..modal-form-check:checked + .modal-form-check-icon .modal-form-check-icon-vector {
+.modal-form-check:checked + .modal-form-check-icon .modal-form-check-icon-vector {
     display: block;
-}
-
-
+} 
 
 .modal-form-check-link {
     color: var(--accent-color);
 }
 
 .modal-btn-submit {
-    display: flex;
+    max-width: 200px;
+    max-height: 50px;
     margin-top: 30px;
     padding: 10px 52px;
     align-self: center;
