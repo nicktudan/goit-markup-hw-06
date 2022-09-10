@@ -480,7 +480,7 @@
                 <p class="footer-text">Підпишіться на розсилку</p>
                 <form class="footer-form">
                     <label class="footer-form-label">
-                        <input class="footer-form-input" type="email" name="email" placeholder="E-mail" required>
+                        <input class="footer-form-input" type="email" name="email" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                     </label>
                     <button type="submit" class="footer-btn">Підписатися
                         <svg class="send-icon" lang="en" aria-label="send icon" width="16px" height="12px">
@@ -527,7 +527,7 @@
                 <label class="modal-form-label">
                     <span class="modal-form-label-desc">Пошта</span>
                     <span class="modal-form-input-wrapper">
-                        <input class="modal-form-input" type="mail" name="user_mail" required>
+                        <input class="modal-form-input" type="mail" name="user_mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$>
                         <svg class="modal-form-icon">
                             <use href="./images/icons.svg#icon-email-black"></use>
                         </svg>
